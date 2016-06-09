@@ -1,0 +1,21 @@
+{
+  "name": "frflywebsite",
+  "homepage": "https://github.com/shamseen/FrflyWebsite",
+  "authors": [
+    "Shamseen <shamseen.c@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^1.5.0",
+    "paper-elements": "polymerElements/paper-elements#^1.0.7"
+  }
+}
