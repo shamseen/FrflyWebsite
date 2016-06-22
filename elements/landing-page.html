@@ -11,27 +11,39 @@
 			}
 
 			paper-card {
-				margin: 50px 10px 50px 10px;
+				width: 40%;
+				margin: 150px 10px 50px 10px;
 				padding: 0px;
-				border: 1px solid black;
-				image: url("./images/shatteredPurpleHeader.jpg");
-				--paper-card-header-image {
-					height: 5px;
-					object-fit: contain;
-				};
+				border-radius: 5px;
+				/*border: 1px solid black;*/
+				background-color: #E6E6E6;
+			}
 
 			.card-content{
-				margin:30px;
-				padding: 30px;
-			}
+				--paper-card-content(
+					margin: 100px;
+					padding: 60px;
+				);
 			}
 
+			.striped{
+				background-color: #D81E1E;
+				background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+				linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+				background-size: 13px, 29px, 37px, 53px;
+				height: 10px;
+				border-radius: 5px 5px 0px 0px;
+			}
 		</style>
 		
 
-		<paper-card image="./images/shatteredPurpleHeader.jpg">
-			<div>FIRST</div>
+		<paper-card>
+			<div class="striped"></div>
+			
 			<div class="card-content">
+				<h1>FIRST</h1>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus faucibus purus ex, eu aliquet mi dapibus sit amet. Mauris eget fringilla quam. Vivamus eget dapibus nibh. Nulla varius nisi quis dictum fringilla. Nunc non consequat elit. Nulla mattis purus a bibendum pellentesque. Mauris venenatis ultrices venenatis. In enim enim, auctor id molestie vitae, commodo eu sem. Aenean id condimentum nisl. Sed suscipit sollicitudin finibus.<br/><br/><br/>
 
 				Donec hendrerit sit amet ex vel maximus. Quisque sagittis dui et est finibus, sit amet egestas dolor ullamcorper. Aliquam convallis, purus a hendrerit bibendum, leo urna faucibus eros, vel fermentum velit lacus quis elit. Nullam pellentesque elit quis tortor feugiat pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed eleifend eros, elementum fringilla mi. Phasellus quis neque et felis ultricies ullamcorper et eu dolor. Ut eget volutpat nibh. Fusce ac facilisis sem, quis volutpat elit. Cras risus dui, euismod sed finibus sed, rhoncus et magna. Nam tristique, eros quis maximus ornare, orci elit vulputate felis, eu malesuada massa augue vel elit. Aliquam ac eros sit amet velit placerat consequat. Pellentesque et ex quis magna placerat rutrum sed vitae lacus. Phasellus et varius leo, et sodales libero. Duis rutrum mauris eu odio blandit pharetra. Duis ultricies dictum eros, dignissim pharetra tortor pharetra vestibulum. <br/><br/><br/>
@@ -57,8 +69,8 @@
 			</div>
 		</paper-card>
 
-		<paper-card heading="Second">
-
+		<paper-card>
+			<div class="striped" style="background-color: #F0544F"></div>
 			<div class="card-content">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus faucibus purus ex, eu aliquet mi dapibus sit amet. Mauris eget fringilla quam. Vivamus eget dapibus nibh. Nulla varius nisi quis dictum fringilla. Nunc non consequat elit. Nulla mattis purus a bibendum pellentesque. Mauris venenatis ultrices venenatis. In enim enim, auctor id molestie vitae, commodo eu sem. Aenean id condimentum nisl. Sed suscipit sollicitudin finibus.<br/><br/><br/>
 
