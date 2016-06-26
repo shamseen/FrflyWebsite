@@ -1,0 +1,42 @@
+<!--
+A comment describing this element
+
+Example:
+
+    <my-elem></my-elem>
+
+Example:
+
+    <my-elem>
+      <h2>Hello my-elem</h2>
+    </my-elem>
+
+@demo demo/index.html
+-->
+
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="stylesheet" type="text/css" href="../Styles/main.css">
+
+<dom-module id="partners-page">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+		</style>
+		
+	<paper-card heading="Quicken Loans" image="logo" elevation="1" animated-shadow="false">
+	  <div class="card-content">
+	  	
+	  </div>
+	  <!-- <div class="card-actions"> [Future state with more partners] </div> -->
+	</paper-card>
+
+	</template>
+	<script>
+		Polymer({
+			is: 'partners-page'
+		});
+	</script>
+</dom-module>
