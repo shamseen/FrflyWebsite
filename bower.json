@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "polymer": "^1.5.0",
-    "paper-elements": "polymerElements/paper-elements#^1.0.7"
+    "paper-elements": "polymerElements/paper-elements#^1.0.7",
+    "social-media-icons": "^1.0.3"
   }
 }
