@@ -1,5 +1,7 @@
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/social-media-icons/social-media-icons.html">
 <link rel="stylesheet" type="text/css" href="../Styles/main.css">
 
 
@@ -18,78 +20,131 @@
 			}*/
 
 			.center-this-shit {
-				display: flex;	
+				display: flex;
 				justify-content: space-around;
+				align-items: center;
+			}
+
+			.membersContainer {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+
+			.memberSpace {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+
+			.contactUs {
+				width: 25%;
+			}
+
+			.bioCard {
+				width: 65%;
+			}
+
+			.memberCard {
+				width: 95%;
+			}
+
+			.centerCards {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
 			}
 
 			paper-card {
 				/*width: 40%;*/
 				border-radius: 5px;
+				font-size: 18px;
 				/*border: 1px solid black;*/
-				background-color: #E6E6E6;
+				/*	background-color: #E6E6E6;*/
 			}
 
 			.striped{
-				background-color: #D81E1E;
+				/*background-color: #D81E1E;
 				background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
 				linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
 				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
-				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
-				background-size: 13px, 29px, 37px, 53px;
+				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);*/
+				/*background-size: 13px, 29px, 37px, 53px;*/
 				height: 25px;
 				border-radius: 5px 5px 0px 0px;
-				box-shadow: rgba(0, 0, 0, 0.24) -2.3408942051048403px 5.524510324047423px 12.090680100755666px 0px, rgba(0, 0, 0, 0.12) 0px 0px 12px 0px;
+				/*box-shadow: rgba(0, 0, 0, 0.24) -2.3408942051048403px 5.524510324047423px 12.090680100755666px 0px, rgba(0, 0, 0, 0.12) 0px 0px 12px 0px;*/
+			}
+
+			.contentText{
+				font-size: 18px;
 			}
 
 		</style>
 		
-		<div>
+		<div class="centerCards">
+		<br>
 			<div class="center-this-shit">
-				<paper-card>
-					<div class="striped"></div>
+			
+				<paper-card class="bioCard">
+					<div class="striped" style="background-color: gray;"></div>
 
 					<div class="card-content">
 						<h1>Hello!</h1>
-						we're a non-profit <br/><br/><br/> 
-						mission <br/><br/><br/>
-						how are we doing it <br/><br/><br/>				
+						<div class="contentText">
+							We're a nonprofit that wants to help kids learn to learn. And not just because they have to, but because they want to. Our goal is to implement project-based learning so they actually enjoy what they're doing. We keep the core concepts in context of practical, hands-on examples.  
+						</div> 		
 					</div>
+
 				</paper-card>
 
-				<paper-card>
-					<div class="striped"></div>
-
+				<paper-card class="contactUs">
+					<div class="striped" style="background-color:gray;"></div>
 					<div class="card-content">
 						<h1>Talk to us!</h1>
-						email address
-					</div>
-					<div class="card-actions">
-						<paper-button>Email us!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</paper-button>
+							<a href="mailto:frflfy.ngo@gmail.com">frfly.ngo@gmail.com</a><br><br>&nbsp;
+							<social-media-icons icon="facebook"></social-media-icons>&nbsp;&nbsp;&nbsp;&nbsp;
+							<social-media-icons icon="twitter"></social-media-icons>&nbsp;&nbsp;&nbsp;&nbsp;
+							<social-media-icons icon="instagram"></social-media-icons>
 					</div>
 				</paper-card>
 
-				<paper-card>
-					<div class="striped" style="background-color: #F0544F"></div>
+		</div>
+		<br>
+			<div class="center-this-shit">
+				<paper-card class="memberCard">
+					<div class="striped" style="background-color: gray"></div>
 					<div class="card-content">
 						<h1>Members</h1>
+<div class="membersContainer">
+					<div class="memberSpace">
+					<img src="../images/this-is-fine.png" style="width: 100px;"/><br>
+						Shamseen the Dingus <br/>
+						pictures <br/>
+						bio <br/>
+						</div>
 
-						SR <br/><br/><br/>
-						pictures <br/><br/><br/>
-						bio <br/><br/><br/>
+					<div class="memberSpace">
+					<img src="../images/additional-questions.png" style="width: 100px;"/><br>
+						VG <br/>
+						pictures <br/>
+						bio <br/>
+					</div>
 
-						VG <br/><br/><br/>
-						pictures <br/><br/><br/>
-						bio <br/><br/><br/>
 
-						DB <br/><br/><br/>
-						pictures <br/><br/><br/>
-						bio <br/><br/><br/>
+					<div class="memberSpace">
+					<img src="../images/aw-yiss.png" style="width: 100px;"/><br>
+						Derrick the Dingus <br/>
+						pictures <br/>
+						bio <br/>
+					</div>
+
+						</div>
 					</div>
 					
 				</paper-card>
 			</div>
-		</div>
-
+</div>
 	</template>
 	<script>
 		Polymer({
