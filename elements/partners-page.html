@@ -18,20 +18,51 @@ Example:
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="stylesheet" type="text/css" href="../Styles/main.css">
 
+
+
+
 <dom-module id="partners-page">
 	<template>
 		<style>
 			:host {
 				display: block;
 			}
+
+			.center-this-shit {
+				display: flex;	
+				justify-content: space-around;
+			}
+
+			paper-card {
+				/*width: 40%;*/
+				border-radius: 5px;
+				/*border: 1px solid black;*/
+				background-color: #E6E6E6;
+			}
+
+			.striped{
+				background-color: #D81E1E;
+				background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+				linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+				background-size: 13px, 29px, 37px, 53px;
+				height: 25px;
+				border-radius: 5px 5px 0px 0px;
+				box-shadow: rgba(0, 0, 0, 0.24) -2.3408942051048403px 5.524510324047423px 12.090680100755666px 0px, rgba(0, 0, 0, 0.12) 0px 0px 12px 0px;
+			}
 		</style>
-		
-	<paper-card heading="Quicken Loans" image="logo" elevation="1" animated-shadow="false">
-	  <div class="card-content">
-	  	
-	  </div>
-	  <!-- <div class="card-actions"> [Future state with more partners] </div> -->
-	</paper-card>
+
+		<div>
+			<div class="center-this-shit">	
+				<paper-card heading="Quicken Loans">
+					<div class="card-content">
+					skjdhskjdh
+					</div>
+					<!-- <div class="card-actions"> [Future state with more partners] </div> -->
+				</paper-card>
+			</div>
+		</div>
 
 	</template>
 	<script>

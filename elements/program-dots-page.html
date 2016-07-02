@@ -13,26 +13,107 @@ Example:
 
 @demo demo/index.html
 -->
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-form-element/iron-form-element.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="stylesheet" type="text/css" href="../Styles/main.css">
+<link rel="import" href="../Styles/app-theme.html">
+
 
 <dom-module id="program-dots-page">
 	<template>
-		<style>
+		<style include="iron-flex iron-flex-alignment app-theme">
 			:host {
-				display: block;
+				
 			}
-		</style>
-		
-	</template>
 
-	<paper-card heading="D.O.T.S" image="" elevation="1" animated-shadow="false">
-	  <div class="card-content"></div>
-	  <div class="card-actions">
-	    
-	  </div>
-	</paper-card>
-	<script>
-		Polymer({
-			is: 'program-dots-page'
-		});
-	</script>
-</dom-module>
+			.center-this-shit {
+				@apply(--layout-horizontal);
+				@apply(--layout-around-justified);
+				@apply(--layout-wrap);
+				@apply(--layout-relative);
+				flex-direction: row;
+				align-items: flex-start;
+			}
+
+			.header-gray{
+				background-color: gray;
+				height: 25px;
+			}
+
+			.header-striped{
+				background-color: #D81E1E;
+				background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+				linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+				background-size: 13px, 29px, 37px, 53px;
+				height: 25px;
+				border-radius: 5px 5px 0px 0px;
+				box-shadow: rgba(0, 0, 0, 0.24) -2.3408942051048403px 5.524510324047423px 12.090680100755666px 0px, rgba(0, 0, 0, 0.12) 0px 0px 12px 0px;
+			}
+
+			paper-card {
+				/*margin: auto;*/
+				border-radius: 5px;
+				/*border: 1px solid black;*/
+				background-color: #E6E6E6;
+			}
+			
+
+			
+		</style>
+
+		<div>
+			<div class="container center-this-shit">
+				<paper-card style="width:60%; height:auto;">
+					<div class="header-gray"></div>
+					<div class="card-content">
+						<h1>D.O.T.S</h1>
+
+						<div class="border-class">WHO:  children ages 9 - 14 years old.</div>
+
+						<div class="border-class">
+							WHAT: <br/>
+							Detroit Outreach Teaching Services <br/><br/>
+
+							Our first program!! Exploring robotics using LEGO®'s Mindstorm EV3 kit (put link here).  [kids] will be in teams of five (per robot kit) and presented with a series of challenges they have to solve by building robots. Each challenge is harder than the last, so no child, no matter how old, will be bored! The curriculum was developed and tested by the Robostangs (link), FIRST® Robotics team in Northville, MI.
+						</div>
+
+						<div class="border-class">WHERE: TBD</div>
+
+						<div class="border-class">WHEN: TBD</div>
+
+						<div class="border-class">COST: FREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE</div>
+
+					</div>
+					<div class="card-actions"> [Future state with more partners] </div>
+				</paper-card>
+				
+				<paper-card style="width:30% height: auto;">
+					<div class="header-gray"></div>
+
+					<div class="card-content">
+						<h1>Sign Up!</h1>
+						<form is="iron-form" id="sign" method="post" action="/form/handler">
+							<paper-input name="firstName" label="First Name" required></paper-input>
+							<paper-input name="lastName" label="Last Name" required></paper-input>
+							<!-- <paper-checkbox name="read" required>You must check this box</paper-checkbox><br> -->
+							<paper-button raised onclick="_nativeSubmit(event)">Submit</paper-button>
+						</form>
+					</div>
+					<div class="card-actions">
+						Enroll
+					</div>
+				</paper-card>
+			</div>
+
+		</div></template>
+		<script>
+			Polymer({
+				is: 'program-dots-page'
+			});
+		</script>
+	</dom-module>
