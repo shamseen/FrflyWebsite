@@ -16,7 +16,6 @@ Example:
 
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="stylesheet" type="text/css" href="../Styles/main.css">
 
 <dom-module id="partners-page">
 	<template>
@@ -24,15 +23,19 @@ Example:
 			:host {
 				display: block;
 			}
+			.center-this-shit {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
 		</style>
+			<div class="center-this-shit">
 		
-	<paper-card heading="Quicken Loans" image="logo" elevation="1" animated-shadow="false">
-	  <div class="card-content">
-	  	
-	  </div>
-	  <!-- <div class="card-actions"> [Future state with more partners] </div> -->
-	</paper-card>
+				<paper-card heading="Quicken Loans" image="" elevation="1" animated-shadow="false">
+				  <div class="card-content">Some blurb about how great QL is here</div>
+				</paper-card>
 
+			</div>
 	</template>
 	<script>
 		Polymer({
