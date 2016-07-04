@@ -29,18 +29,27 @@
 body {
     font-family: 'Lato', sans-serif;
     font-size: 18px;
+    margin: 0px;
+    background: linear-gradient(
+                rgba(31,121,255, 0.75), 
+                rgba(31,121,255, 0.75)
+                ),  url("http://www.transparenttextures.com/patterns/shattered-dark.png");
 }
 
-.border-class {
-    border-bottom: 1px solid #BABABA;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+.navLinks {
+    margin-right: 60px;
 }
 
-.center-this-shit {
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.content {      
     display: flex;
-    width: 100%;
     justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
 }
 
 paper-card {
