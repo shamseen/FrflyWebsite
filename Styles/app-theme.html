@@ -1,6 +1,6 @@
  
 
-<style is="custom-style">
+<style is="shared-style">
    :root {
     --primary-text-color: var(--paper-grey-900);
     --primary-background-color: #ffffff;
@@ -35,6 +35,7 @@ body {
     border-bottom: 1px solid #BABABA;
     padding-bottom: 20px;
     margin-bottom: 20px;
+    display: flex;
 }
 
 .center-this-shit {
@@ -43,12 +44,25 @@ body {
     justify-content: space-around;
 }
 
+.icon-calendar {
+    content: url(../images/icon_calendar.svg);
+    width: 50px;
+}
+
+.program-details-card {
+    width: 60%;
+    order: 1;
+}
+
+.program-signup-card{
+    width: 25%;
+    order: 2;
+}
+
 paper-card {
     --paper-card-header: {background-color:#09B5F9;};
-    margin: 0px 50px 30px 50px;
     border: 1px solid gray;
     background-color: white;
-    elevation: 0; 
-    border-radius: 3px
+    elevation: 0;
 }
 </style>
