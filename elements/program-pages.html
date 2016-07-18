@@ -1,0 +1,159 @@
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="stylesheet" type="text/css" href="../bower_components/iron-icons/iron-icons.html">
+<!-- <link rel="stylesheet" type="text/css" href="../../Styles/main.css"> -->
+<link rel="import" href="../Styles/app-theme.html">
+<!-- <script type="text/javascript" src="../scripts/programs.js"></script> -->
+
+<dom-module id="program-pages">
+	<template>
+		<style include="app-theme iron-flex iron-flex-alignment">
+			:host {
+				
+			}
+
+			.center-this-shit {
+				@apply(--layout-horizontal);
+				@apply(--layout-around-justified);
+				@apply(--layout-wrap);
+				@apply(--layout-relative);
+				flex-direction: row;
+				align-items: flex-start;
+				justify-content: center space-around;
+			}
+
+			.header-gray{
+				background-color: gray;
+				height: 25px;
+			}
+
+			.header-striped{
+				background-color: #D81E1E;
+				background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+				linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+				linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+				background-size: 13px, 29px, 37px, 53px;
+				height: 25px;
+				border-radius: 5px 5px 0px 0px;
+				box-shadow: rgba(0, 0, 0, 0.24) -2.3408942051048403px 5.524510324047423px 12.090680100755666px 0px, rgba(0, 0, 0, 0.12) 0px 0px 12px 0px;
+			}
+
+			paper-card {
+				/*margin: auto;*/
+				border-radius: 5px;
+				/*border: 1px solid black;*/
+				background-color: #E6E6E6;
+			}		
+
+			.details-card {
+				width: 60%;
+				order: 1;
+			}
+
+			.details-row {
+				display: flex;
+				flex-wrap: nowrap;
+				align-items: center;
+				padding: 0px 10px;
+			}
+
+			.details-row > p {
+				margin: 15px;
+			}
+
+			.signup-card{
+				width: 25%;
+				order: 2;
+			}
+		</style>
+
+		<div>
+			<div class="container center-this-shit">
+				<paper-card class="details-card">
+
+					<div class="header-gray"></div>
+
+					<!-- TO DO: create javascript object, loop through list of them, and their properties -->
+					<div class="card-content">
+						<template>
+
+							<h1 class="details-row">[[program.name]]</h1>
+
+							<div class="border-class"></div>
+
+							<template is="dom-repeat" items="program.events">
+
+								<div class="details-row">
+									<div class="icon-calendar"></div>
+									<p>[[item.who]]</p>
+								</div>
+
+								<div class="border-class"></div>
+
+								<div class="details-row">
+									<div class="icon-calendar"></div>
+									<p>[[item.description]]</p>
+								</div>
+								<div class="border-class"></div>
+
+								<div class="details-row">
+									<div class="icon-calendar"></div>
+									<p>[[item.when]]</p>
+								</div>
+
+								<div class="border-class"></div>
+
+								<div class="details-row">
+									<div class="icon-calendar"></div>
+									<p>[[item.where]]</p>
+								</div>
+
+								<div class="border-class"></div>
+
+								<div class="details-row">
+									<div class="icon-calendar"></div>
+									<p>[[item.cost]]</p>
+								</div></template>
+
+								<div class="border-class"></div>
+							</template>
+						</div>
+						<!-- <div class="card-actions"> [Future state with more partners] </div> -->
+
+					</paper-card>
+
+					<paper-card class="signup-card">
+						<div class="header-gray"></div>
+
+						<div class="card-content">
+							<h1>Sign Up!</h1>
+							<form is="iron-form" id="sign" method="post" action="/form/handler">
+								<paper-input name="firstName" label="First Name" required></paper-input>
+								<paper-input name="lastName" label="Last Name" required></paper-input>
+								<!-- <paper-checkbox name="read" required>You must check this box</paper-checkbox><br> -->
+								<paper-button raised onclick="_nativeSubmit(event)">Submit</paper-button>
+							</form>
+						</div>
+					</paper-card>
+				</div>
+			</div>
+		</template>
+		<script>
+		Polymer({
+			is: 'program-pages',
+
+			properties: {
+				program:
+				{
+					type: Object
+				}
+			}			
+		});
+
+
+	</script>
+</dom-module>
