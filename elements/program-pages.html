@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="../bower_components/iron-icons/iron-icons.html">
 <!-- <link rel="stylesheet" type="text/css" href="../../Styles/main.css"> -->
 <link rel="import" href="../Styles/app-theme.html">
-<!-- <script type="text/javascript" src="../scripts/programs.js"></script> -->
+<script type="text/javascript" src="../scripts/programs.js"></script>
 
 <dom-module id="program-pages">
 	<template>
@@ -147,11 +147,17 @@
 			is: 'program-pages',
 
 			properties: {
-				program:
-				{
-					type: Object
+				programNameCode: String,
+				program: {
+					type: Object,
+					reflectToAttribute: true
 				}
+			},
+
+			ready: function(){
+				this.program = returnProgram(this.programNameCode);
 			}			
+
 		});
 
 
