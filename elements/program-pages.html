@@ -4,9 +4,8 @@
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="stylesheet" type="text/css" href="../bower_components/iron-icons/iron-icons.html">
-<!-- <link rel="stylesheet" type="text/css" href="../../Styles/main.css"> -->
 <link rel="import" href="../Styles/app-theme.html">
-<!-- <script type="text/javascript" src="../scripts/programs.js"></script> -->
+<script type="text/javascript" src="programs.js"></script>
 
 <dom-module id="program-pages">
 	<template>
@@ -74,55 +73,50 @@
 		<div>
 			<div class="container center-this-shit">
 				<paper-card class="details-card">
-
 					<div class="header-gray"></div>
-
-					<!-- TO DO: create javascript object, loop through list of them, and their properties -->
 					<div class="card-content">
-						<template>
+						<!-- data binding doesn't work in this template -->
+						<h1 class="details-row">{{program.name}}</h1>
 
-							<h1 class="details-row">[[program.name]]</h1>
+						<div class="border-class"></div>
+
+						<template is="dom-repeat" items="{{program.workshops}}">
+
+							<div class="details-row">
+								<div class="icon-calendar"></div>
+								<p>[[item.who]]</p>
+							</div>
 
 							<div class="border-class"></div>
 
-							<template is="dom-repeat" items="program.events">
+							<div class="details-row">
+								<div class="icon-calendar"></div>
+								<p>[[item.what]]</p>
+							</div>
+							<div class="border-class"></div>
 
-								<div class="details-row">
-									<div class="icon-calendar"></div>
-									<p>[[item.who]]</p>
-								</div>
+							<div class="details-row">
+								<div class="icon-calendar"></div>
+								<p>[[item.when]]</p>
+							</div>
 
-								<div class="border-class"></div>
+							<div class="border-class"></div>
 
-								<div class="details-row">
-									<div class="icon-calendar"></div>
-									<p>[[item.description]]</p>
-								</div>
-								<div class="border-class"></div>
+							<div class="details-row">
+								<div class="icon-calendar"></div>
+								<p>[[item.where]]</p>
+							</div>
 
-								<div class="details-row">
-									<div class="icon-calendar"></div>
-									<p>[[item.when]]</p>
-								</div>
+							<div class="border-class"></div>
 
-								<div class="border-class"></div>
+							<div class="details-row">
+								<div class="icon-calendar"></div>
+								<p>[[item.cost]]</p>
+							</div>
+						</template>
 
-								<div class="details-row">
-									<div class="icon-calendar"></div>
-									<p>[[item.where]]</p>
-								</div>
-
-								<div class="border-class"></div>
-
-								<div class="details-row">
-									<div class="icon-calendar"></div>
-									<p>[[item.cost]]</p>
-								</div></template>
-
-								<div class="border-class"></div>
-							</template>
+							<div class="border-class"></div>
 						</div>
-						<!-- <div class="card-actions"> [Future state with more partners] </div> -->
 
 					</paper-card>
 
@@ -134,7 +128,6 @@
 							<form is="iron-form" id="sign" method="post" action="/form/handler">
 								<paper-input name="firstName" label="First Name" required></paper-input>
 								<paper-input name="lastName" label="Last Name" required></paper-input>
-								<!-- <paper-checkbox name="read" required>You must check this box</paper-checkbox><br> -->
 								<paper-button raised onclick="_nativeSubmit(event)">Submit</paper-button>
 							</form>
 						</div>
@@ -143,17 +136,28 @@
 			</div>
 		</template>
 		<script>
-		Polymer({
-			is: 'program-pages',
+			Polymer({
+				is: 'program-pages',
 
-			properties: {
-				program:
-				{
-					type: Object
-				}
-			}			
-		});
+				properties: {
+					programNameCode: {
+						type: String,
+						value: "DOTS",
+						reflectToAttribute: true
+					},
+					program: {
+						type: Object,
+						computed: 'computeProgramObject(programNameCode)',
+					}
+				},
+
+				computeProgramObject: function(programNameCode){
+					var p = returnProgram(programNameCode);
+					return p;
+				}			
+
+			});
 
 
-	</script>
-</dom-module>
+		</script>
+	</dom-module>
