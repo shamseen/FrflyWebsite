@@ -74,6 +74,17 @@
 			<div class="container center-this-shit">
 				<paper-card class="details-card">
 					<div class="header-gray"></div>
+
+					<!-- Here is an example of the dom-repeat in action, you can also index them names as something other than item *psst it's programs here* (Uncomment Me!) -->
+
+					<!-- <template is="dom-repeat" items="{{programs}}" as="program">
+						<div>{{program.name}}</div>
+						<div>{{program.description}}</div>
+						<div>{{program.events.who}}</div>
+						<div>{{program.events.description}}</div>
+					</template> -->
+
+
 					<div class="card-content">
 						<!-- data binding doesn't work in this template -->
 						<h1 class="details-row">{{program.name}}</h1>
@@ -148,7 +159,18 @@
 					program: {
 						type: Object,
 						computed: 'computeProgramObject(programNameCode)',
-					}
+					},
+					//Here you can set the value of programs to contain all of the information that you will need (Uncomment me!).
+					// value: [
+					// 	{
+					// 		name: 'D.O.T.S.',
+					// 		description: 'Detroit Outreach Teaching Service',
+					// 		events: { 
+					// 			who: 'kids 9 - 14 years old.',
+					// 			description: 'Our first program!! Exploring robotics using LEGO®s Mindstorm EV3 kit (put link here).  [kids] will be in teams of five (per robot kit) and presented with a series of challenges they have to solve by building robots. Each challenge is harder than the last, so no child, no matter how old, will be bored! The curriculum was developed and tested by the Robostangs (link), FIRST® Robotics team in Northville, MI.'
+					// 		}
+					// 	}
+					// ]
 				},
 
 				computeProgramObject: function(programNameCode){
